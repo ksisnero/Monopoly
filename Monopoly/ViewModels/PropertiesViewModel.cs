@@ -5,7 +5,7 @@ using DevExpress.Mvvm;
 namespace Monopoly.ViewModels
 {
     [POCOViewModel]
-    public class CommunityChestViewModel
+    public class PropertiesViewModel
     {
     }
 }

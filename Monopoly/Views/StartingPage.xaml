@@ -1,0 +1,46 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" xmlns:ViewModels="clr-namespace:Monopoly.ViewModels"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:local="clr-namespace:Monopoly.Views" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" x:Class="Monopoly.Views.StartingPage"
+             mc:Ignorable="d"
+             DataContext="{dxmvvm:ViewModelSource Type={x:Type ViewModels:StartingPageViewModel}}"
+             d:DesignHeight="500" d:DesignWidth="300">
+    <Grid>
+        <StackPanel>
+            <StackPanel>
+                <TextBlock x:Name="TitleOfName" Text="MONOPOLY" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" FontFamily="Segoe UI Light" FontSize="18" Padding="0,10"/>
+
+                <TextBlock x:Name="NumberOfPlayers" Text="How many Players?" Foreground="White" FontFamily="Segoe UI Light" HorizontalAlignment="Center" Padding="0,0,0,10"/>
+                <TextBox x:Name="NumberOfPlayersTextBox" Height="23" TextWrapping="Wrap" Text="" Width="200" Background="{x:Null}"/>
+                <Label x:Name="NoteForNumberOfPlayersTextBox" Content="* Must be more than one" FontSize="9" HorizontalAlignment="Center" Background="{x:Null}" Foreground="#E3FFFFFF" FontFamily="Segoe UI Light" Margin="0,0,0,10"/>
+            </StackPanel>
+            <StackPanel Margin="0,0,0,10">
+                <TextBlock x:Name="PlayerNames" Text="{Binding Content}" Foreground="White" FontFamily="Segoe UI Light" HorizontalAlignment="Center" Padding="0,0,0,10"/>
+                <TextBox x:Name="PlayerNameTextBox" Height="23" TextWrapping="Wrap" Text="{Binding UserInput}" Width="200" Background="{x:Null}" Margin="0"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Width="200" HorizontalAlignment="Center">
+                <Button x:Name="Enter" Content="Enter" Width="80" Margin="0" HorizontalContentAlignment="Center" HorizontalAlignment="Left"/>
+                <Button x:Name="Delete" Content="Delete" Width="80" Margin="40,0,0,0" Foreground="Black" HorizontalAlignment="Right"/>
+            </StackPanel>
+            
+            
+            <ListView x:Name="ListViewOfPlayers" Height="100" Width="200" Margin="0,10">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            
+            <StackPanel>
+                <TextBlock x:Name="ChooseGamePiece" TextWrapping="Wrap" Text="Choose a Game Piece:" Foreground="White" FontFamily="Segoe UI Light" HorizontalAlignment="Center" Padding="0,0,0,10"/>
+            </StackPanel>
+            <Button x:Name="StartGame" Content="Start Game" HorizontalAlignment="Center" Background="White" VerticalAlignment="Center" Height="20" Padding="0" Width="100"/>
+            
+        </StackPanel>
+    </Grid>
+</UserControl>
